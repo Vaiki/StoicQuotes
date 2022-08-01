@@ -21,14 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="He suffers more than necessary, who suffers before it is necessary." />
 
-    <ProgressBar
+    <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/pb_pagination"
-        style="?attr/progressBarStyle"
-        android:layout_width="wrap_content"
+        style="?attr/progressBarPadding"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:indeterminate="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
 </androidx.constraintlayout.widget.ConstraintLayout>

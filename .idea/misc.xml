@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AS/StoicQuotes/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/AS/StoicQuotes/app/src/main/res/layout/quote_widget.xml" value="0.1984375" />
+        <entry key="..\:/AS/StoicQuotes/app/src/main/res/layout/quote_widget_configure.xml" value="0.1984375" />
       </map>
     </option>
   </component>

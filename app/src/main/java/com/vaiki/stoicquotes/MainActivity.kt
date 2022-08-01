@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 is Resource.Success -> {
                     paginationProgressBar.visibility = View.INVISIBLE
                     tvQuote.text = response.data?.body.toString()
+
                 }
                 is Resource.Loading -> {
                     paginationProgressBar.visibility = View.VISIBLE
