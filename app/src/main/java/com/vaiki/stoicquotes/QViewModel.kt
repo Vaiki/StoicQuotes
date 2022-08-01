@@ -10,19 +10,26 @@ import retrofit2.Response
 
 class QViewModel : ViewModel() {
     val quoteItem = MutableLiveData<Resource<QuoteItem>>()
-
+   val errorMessage = MutableLiveData<Boolean>(false)
     fun getRandomQuote() {
         viewModelScope.launch {
-            quoteItem.postValue(Resource.Loading())
-            val response = RetrofitService.create().randomQuotes()
-            quoteItem.postValue(handleResponse(response))
+            try {
+                quoteItem.postValue(Resource.Loading())
+                val response = RetrofitService.create().randomQuotes()
+                quoteItem.postValue(handleResponse(response))
+            } catch (e: Exception) {
+                errorMessage.postValue(true)
+            }
         }
     }
 
     private fun handleResponse(response: Response<QuoteItem>): Resource<QuoteItem> {
         if (response.isSuccessful) {
+            errorMessage.postValue(false)
             return Resource.Success(response.body()!!)
+
         }
+
         return Resource.Error(response.message())
     }
 }

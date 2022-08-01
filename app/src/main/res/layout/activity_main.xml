@@ -22,7 +22,7 @@
         tools:text="He suffers more than necessary, who suffers before it is necessary." />
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:id="@+id/pb_pagination"
+        android:id="@+id/lpb_pagination"
         style="?attr/progressBarPadding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,4 +31,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpb_pagination"
+        style="?attr/progressBarPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_error_connection"/>
+    <TextView
+        android:id="@+id/tv_error_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_internet_connection"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_try_again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/btn_try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/try_again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
